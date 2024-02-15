@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="title">
+        <h3>LISTADO DE LOCALIZACIONES</h3>
+        <p>Listado de dispositivos que reportan su posición</p>
+    </div>
+    <div class="salesman-card">
+        <app-salesman-card *ngFor="let salesman of salesmanList" [salesmanData]="salesman"></app-salesman-card>
+    </div>
+    <div class="actions">
+        <button>CREAR NUEVO</button>
+    </div>
+</div>

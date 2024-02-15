@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    margin-top: 12px;
+    padding: 12px;
+    div {
+        border-radius: 14px;
+        overflow: hidden;
+    }
+}
