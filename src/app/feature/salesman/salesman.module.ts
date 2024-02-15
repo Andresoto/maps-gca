@@ -7,6 +7,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ListSalesmanComponent } from './components/list-salesman/list-salesman.component';
 import { SalesmanCardComponent } from './components/salesman-card/salesman-card.component';
+import { HeaderComponent } from '@shared/components/header/header.component';
+
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { SalesmanCardComponent } from './components/salesman-card/salesman-card.
   imports: [
     CommonModule,
     SalesmanRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatButtonModule
   ]
 })
 export class SalesmanModule { }
