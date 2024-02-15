@@ -23,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     SalesmanRoutingModule,
     GoogleMapsModule,
+    HeaderComponent,
     MatButtonModule
   ]
 })
