@@ -1,3 +1,5 @@
+@import 'src/_variables.scss';
+
 .card {
   display: flex;
   justify-content: space-between;
@@ -10,7 +12,7 @@
     border-radius: 10px;
   }
   p {
-    color: #2db5eb;
+    color: $color-secundario;
     font-size: 14px;
   }
   .info-left {
