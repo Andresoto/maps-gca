@@ -1,6 +1,6 @@
 import { Coordinates } from "./coordinates.model";
 
-export interface Category {
+export interface Salesman {
     id:          string;
     name:        string;
     category:    string;
