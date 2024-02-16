@@ -1,0 +1,24 @@
+@import "src/_variables.scss";
+.container-form {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    &:nth-child(2) {
+      background-color: $color-primario;
+      color: #fff;
+    }
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}

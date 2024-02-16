@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>Dialog with elements</h1>
+<form [formGroup]="formSalesman" (ngSubmit)="create()">
+<div mat-dialog-content>
+        <div class="container-form">
+
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+                <input matInput placeholder="ID" formControlName="id" type="text">
+                <mat-error *ngIf="validField('id')">
+                  Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre" formControlName="name" type="text">
+                <mat-error *ngIf="validField('name')">
+                  Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Categoría</mat-label>
+                <input matInput placeholder="Categoría" formControlName="category" type="text">
+                <mat-error *ngIf="validField('category')">
+                  Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Dirección</mat-label>
+                <input matInput placeholder="Dirección" formControlName="address" type="text">
+                <mat-error *ngIf="validField('address')">
+                  Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Foto</mat-label>
+                <input matInput placeholder="Foto" formControlName="photo" type="text">
+                <mat-error *ngIf="validField('photo')">
+                  Este campo es requerido
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Vehículo</mat-label>
+              <mat-select placeholder="Seleccione una opción" formControlName="vehicle" class="my-custom-select">
+                <mat-option *ngFor="let vehicle of VehiclesOptions" [value]="vehicle.value" class="options">
+                  <img [src]="vehicle.icon" [alt]="vehicle.text" class="icon">
+                  {{vehicle.text}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="validField('vehicle')">
+                Este campo es requerido
+              </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="actions">
+      <button mat-raised-button mat-dialog-close>Cerrar</button>
+      <button mat-raised-button>Crear</button>
+    </div>
+</form>
+
+<div>
+  <img [src]="'../../../../../assets/icons/pin'+ (i+1) +'.svg'" alt="" *ngFor="let item of [0,0,0,0]; let i = index">
+  <img src="../../../../../assets/icons/pin10.svg" alt="">
+  <img src="../../../../../assets/icons/pinselected.svg" alt="">
+  <img src="../../../../../assets/icons/sinvehiculo.svg" alt="">
+</div>

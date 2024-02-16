@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Salesman } from '@core/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
+import { FormSalesmandComponent } from '../form-salesmand/form-salesmand.component';
 
 @Component({
   selector: 'app-list-salesman',
@@ -12,7 +14,8 @@ export class ListSalesmanComponent {
   salesmanList: Salesman[] = [] 
 
   constructor(
-    private salesmanService: SalesmanService
+    private salesmanService: SalesmanService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -24,6 +27,17 @@ export class ListSalesmanComponent {
       error: (er) => {
         console.log(er);
       }
-    })
+    });
+    this.createSalesman()
+  }
+
+  createSalesman() {
+    this.dialog.open(FormSalesmandComponent, {
+      minHeight: '50vh',
+      width: '100%',
+      position: {
+        bottom: '20px',
+      }
+    });
   }
 }

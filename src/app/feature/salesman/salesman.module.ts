@@ -7,24 +7,27 @@ import { LayoutComponent } from './layout/layout.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ListSalesmanComponent } from './components/list-salesman/list-salesman.component';
 import { SalesmanCardComponent } from './components/salesman-card/salesman-card.component';
+import { FormSalesmandComponent } from './components/form-salesmand/form-salesmand.component';
 import { HeaderComponent } from '@shared/components/header/header.component';
 
-import {MatButtonModule} from '@angular/material/button';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { MATERIAL_MODULES } from './material';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LayoutComponent,
     ListSalesmanComponent,
-    SalesmanCardComponent
+    SalesmanCardComponent,
+    FormSalesmandComponent
   ],
   imports: [
     CommonModule,
     SalesmanRoutingModule,
     GoogleMapsModule,
     HeaderComponent,
-    MatButtonModule
+    ReactiveFormsModule,
+    MATERIAL_MODULES
   ]
 })
 export class SalesmanModule { }
