@@ -28,7 +28,6 @@ export class ListSalesmanComponent {
         console.log(er);
       }
     });
-    this.createSalesman()
   }
 
   createSalesman() {

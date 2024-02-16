@@ -1,1 +1,14 @@
-<p>home works!</p>
+<google-map height="100%" width="100%" [center]="center" [zoom]="zoom">
+  <map-marker
+    #marker="mapMarker"
+    *ngFor="let salesman of salesmanList"
+    [position]="{lat: salesman.coordinates.latitude, lng: salesman.coordinates.longitude}"
+    [icon]="'../../../../../assets/icons/' + salesman.vehicle + '.svg'"
+    [options]="markerOptions"
+    (mapClick)="openInfoWindow(marker, salesman.id)"
+  >
+    <map-info-window>
+      id del seleccionado: {{id}}
+    </map-info-window>
+  </map-marker>
+</google-map>
