@@ -16,7 +16,7 @@ export class HomeComponent {
   markerOptions: google.maps.MarkerOptions = { draggable: false };
 
   salesmanList: Salesman[] = [];
-  id = ''
+  salesmanId = ''
 
   constructor(private salesmanService: SalesmanService) {}
 
@@ -34,7 +34,7 @@ export class HomeComponent {
 
   openInfoWindow(marker: MapMarker, id: string) {
     this.infoWindow.open(marker);
-    this.id = id;
+    this.salesmanId = id;
   }
 
 }

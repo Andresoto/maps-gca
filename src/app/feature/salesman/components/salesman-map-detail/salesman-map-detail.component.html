@@ -1,0 +1,18 @@
+<div class="card-details" *ngIf="!isLoader; else elseTemplate">
+    <div class="image-container">
+        <img [src]="'../../../../../assets/img/' + salesman?.photo + '.jpg'">
+    </div>
+    <div class="info">
+        <div class="text">
+            <h3>{{salesman?.name | uppercase}}</h3>
+            <p>{{salesman?.category}}</p>
+        </div>
+        <div class="actions">
+            <button >VER</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #elseTemplate>
+    <mat-spinner class="spinner"></mat-spinner>
+</ng-template>

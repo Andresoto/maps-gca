@@ -12,6 +12,7 @@ import { HeaderComponent } from '@shared/components/header/header.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MATERIAL_MODULES } from './material';
+import { SalesmanMapDetailComponent } from './components/salesman-map-detail/salesman-map-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MATERIAL_MODULES } from './material';
     LayoutComponent,
     ListSalesmanComponent,
     SalesmanCardComponent,
-    FormSalesmandComponent
+    FormSalesmandComponent,
+    SalesmanMapDetailComponent
   ],
   imports: [
     CommonModule,

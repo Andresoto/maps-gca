@@ -20,4 +20,8 @@ export class SalesmanService {
   createSalesman(data: NewSalesman) {
     return this.http.post(`${this.baseURL}/salesman`, data);
   }
+
+  getOne(id: string) {
+    return this.http.get<Salesman>(`${this.baseURL}/salesman/${id}`);
+  }
 }

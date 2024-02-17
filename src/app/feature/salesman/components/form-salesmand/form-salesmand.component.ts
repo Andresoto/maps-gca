@@ -17,11 +17,11 @@ export class FormSalesmandComponent {
     {value: 'carro', text: 'Carro', icon: '../../../../../assets/icons/carro.svg'},
     {value: 'grua', text: 'Grúa', icon: '../../../../../assets/icons/grua.svg'},
     {value: 'moto', text: 'Moto', icon: '../../../../../assets/icons/moto.svg'},
-    {value: 'pin2', text: 'Dron', icon: '../../../../../assets/icons/pin2.svg'},
-    {value: 'pin1', text: 'Estación de servicio?', icon: '../../../../../assets/icons/pin1.svg'},
-    {value: 'pin3', text: 'Cámara?', icon: '../../../../../assets/icons/pin3.svg'},
-    {value: 'pin4', text: 'Celular?', icon: '../../../../../assets/icons/pin4.svg'},
-    {value: 'pin10', text: 'Emergencia?', icon: '../../../../../assets/icons/pin10.svg'},
+    {value: 'pin1', text: 'pin1', icon: '../../../../../assets/icons/pin1.svg'},
+    {value: 'pin2', text: 'pin2', icon: '../../../../../assets/icons/pin2.svg'},
+    {value: 'pin3', text: 'pin3', icon: '../../../../../assets/icons/pin3.svg'},
+    {value: 'pin4', text: 'pin4', icon: '../../../../../assets/icons/pin4.svg'},
+    {value: 'pin10', text: 'pin10', icon: '../../../../../assets/icons/pin10.svg'},
     {value: 'sinvehiculo', text: 'Sin vehículo', icon: '../../../../../assets/icons/sinvehiculo.svg'},
   ];
 
@@ -50,6 +50,7 @@ export class FormSalesmandComponent {
   create(): void {
     if (!this.formSalesman.valid) {
       this.formSalesman.markAllAsTouched();
+      return;
     }
 
     let data: NewSalesman = this.formSalesman.getRawValue();

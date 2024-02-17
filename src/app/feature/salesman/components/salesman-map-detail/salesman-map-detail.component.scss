@@ -1,0 +1,47 @@
+@import "src/_variables.scss";
+
+.card-details {
+  display: flex;
+  background-color: #fff;
+  .image-container {
+    width: 80px;
+    border-radius: 40%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 14px;
+    width: 100%;
+    .text {
+      h3 {
+        font-weight: 400;
+      }
+      p {
+        font-size: 14px;
+        color: $color-primario;
+      }
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        background-color: $color-primario;
+        color: #fff;
+        border: none;
+        padding: 4px 12px;
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+.spinner {
+    height: 60px !important;
+}
+

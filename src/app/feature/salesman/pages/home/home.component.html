@@ -7,8 +7,8 @@
     [options]="markerOptions"
     (mapClick)="openInfoWindow(marker, salesman.id)"
   >
-    <map-info-window>
-      id del seleccionado: {{id}}
-    </map-info-window>
-  </map-marker>
+</map-marker>
+<map-info-window>
+  <app-salesman-map-detail [salesmanId]="salesmanId" *ngIf="salesmanId"/>
+</map-info-window>
 </google-map>
