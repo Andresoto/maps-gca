@@ -9,4 +9,9 @@ import { Salesman } from '@core/models/salesman.model';
 export class SalesmanCardComponent {
 
   @Input() salesmanData!: Salesman;
+  @Input() active: boolean = false;
+
+  focusCard() {
+    this.active = !this.active;
+  }
 }

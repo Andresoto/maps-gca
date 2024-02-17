@@ -1,4 +1,4 @@
-@import 'src/_variables.scss';
+@import "src/_variables.scss";
 
 .card {
   display: flex;
@@ -6,6 +6,7 @@
   padding: 20px 15px;
   border-bottom: 1px solid #d2d2d2;
   background-color: #f4f4f4;
+  cursor: pointer;
   &:hover {
     background-color: #fff;
     border: 1px solid #d2d2d2;
@@ -61,4 +62,10 @@
       }
     }
   }
+}
+
+.focus {
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
 }

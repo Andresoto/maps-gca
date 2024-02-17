@@ -12,7 +12,7 @@ export class HomeComponent {
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
 
   center: google.maps.LatLngLiteral = { lat: 4.7116127, lng: 4.6811127 };
-  zoom = 11;
+  zoom = 14;
   markerOptions: google.maps.MarkerOptions = { draggable: false };
 
   salesmanList: Salesman[] = [];
@@ -21,14 +21,32 @@ export class HomeComponent {
   constructor(private salesmanService: SalesmanService) {}
 
   ngOnInit() {
-    this.salesmanService.getAllSalesman().subscribe({
+    this.subscribeSalesman();
+    this.salesmanService.mapCenter$
+    .subscribe({
+      next: (data) => {
+        this.center = data;
+      }
+    })
+  }
+
+  subscribeSalesman() {
+    this.salesmanService.salesman$.subscribe({
       next: (data) => {
         this.salesmanList = data;
-        this.center = { lat: this.salesmanList[0].coordinates.latitude, lng: this.salesmanList[0].coordinates.longitude }
+      }
+    });
+  }
+
+  getSalesman() {
+    this.salesmanService.getAllSalesman()
+    .subscribe({
+      next: (data) => {
+        this.salesmanService.salesman$.next(data);
       },
       error: (er) => {
         console.log(er);
-      },
+      }
     });
   }
 

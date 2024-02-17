@@ -1,5 +1,5 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<form [formGroup]="formSalesman" (ngSubmit)="create()">
+<h1 mat-dialog-title>Crear nuevo vendedor</h1>
+<form [formGroup]="formSalesman" (ngSubmit)="create()" autocomplete="off">
 <div mat-dialog-content>
         <div class="container-form">
 
@@ -62,10 +62,3 @@
       <button mat-raised-button>Crear</button>
     </div>
 </form>
-
-<div>
-  <img [src]="'../../../../../assets/icons/pin'+ (i+1) +'.svg'" alt="" *ngFor="let item of [0,0,0,0]; let i = index">
-  <img src="../../../../../assets/icons/pin10.svg" alt="">
-  <img src="../../../../../assets/icons/pinselected.svg" alt="">
-  <img src="../../../../../assets/icons/sinvehiculo.svg" alt="">
-</div>

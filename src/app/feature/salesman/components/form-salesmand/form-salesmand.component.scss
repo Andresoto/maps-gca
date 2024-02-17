@@ -9,7 +9,7 @@
 .actions {
   display: flex;
   justify-content: flex-end;
-
+  gap: 1rem;
   button {
     &:nth-child(2) {
       background-color: $color-primario;
@@ -21,4 +21,12 @@
 .icon {
   width: 32px;
   height: 32px;
+  margin-right: 8px;
+}
+
+::ng-deep {
+    .mat-mdc-option .mdc-list-item__primary-text {
+        display: flex;
+        align-items: center;
+    }
 }
