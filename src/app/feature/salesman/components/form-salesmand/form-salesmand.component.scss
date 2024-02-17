@@ -1,6 +1,5 @@
 @import "src/_variables.scss";
 .container-form {
-  padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -10,6 +9,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  padding: 0px 24px;
   button {
     &:nth-child(2) {
       background-color: $color-primario;

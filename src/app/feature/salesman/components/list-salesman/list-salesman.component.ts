@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Salesman } from '@shared/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
 import { FormSalesmandComponent } from '../form-salesmand/form-salesmand.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-salesman',
@@ -69,8 +70,18 @@ export class ListSalesmanComponent {
 
     dialogRef.afterClosed()
     .subscribe({
-      next: () => {
-        console.log('Cerrado');
+      next: (data) => {
+        if(data) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Vendedor creado correctamente",
+            showConfirmButton: false,
+            timer: 1500
+          });
+  
+          this.getSalesman();
+        }
       }
     });
   }

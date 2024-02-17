@@ -60,8 +60,7 @@ export class FormSalesmandComponent {
     this.salesmanService.createSalesman(data)
     .subscribe({
       next: (response) => {
-        console.log("Creado", response);
-        this.dialogRef.close();
+        this.dialogRef.close(true);
       },
       error: (err) => {
         console.log(err);
