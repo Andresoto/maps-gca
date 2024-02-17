@@ -13,8 +13,19 @@
             <h4 [ngClass]="{'active': salesmanData.isActive, 'inactive': !salesmanData.isActive}">{{salesmanData.isActive ? 'Activo' : 'Inactivo'}}</h4>
         </div>
         <div class="image-container">
-            <img [src]="'../../../../../assets/img/' + salesmanData.photo + '.jpg'" alt="">
-            <img [src]="'../../../../../assets/icons/' + salesmanData.vehicle + '.svg'" alt="">
+            <ng-container *ngIf="validateImage(salesmanData.photo); else defaultImage">
+                <img [src]="'../../../../../assets/img/' + salesmanData.photo + '.jpg'">
+            </ng-container>
+            <ng-container *ngIf="validateIcon(salesmanData.vehicle); else defaultIcon">
+                <img [src]="'../../../../../assets/icons/' + salesmanData.vehicle + '.svg'">
+            </ng-container>
         </div>
     </div>
 </div>
+
+<ng-template #defaultImage>
+    <img src="../../../../../assets/img/default.png">
+</ng-template>
+<ng-template #defaultIcon>
+    <img src="../../../../../assets/icons/sinvehiculo.svg">
+</ng-template>
