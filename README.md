@@ -1,27 +1,15 @@
-# MapsGca
+## Introducción
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+Este proyecto ha sido desarrollado dando cumplimiento a los requisitos de la prueba técnica de la empresa. Fue desarrollado con Angular en su versión 15.2.10, utilizando una arquitectura limpia denominada core, feature, shared. Adicionalmente, se consumió la API de Google para utilizar la aplicación de Maps. Esta aplicación web permite visualizar de manera más gráfica a través del mapa la ubicación de los vendedores, obtenida por la API proporcionada por la empresa.
 
-## Development server
+## Descripción de funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Para la aplicación web, se creó un listado con información de cada vendedor, el cual proporciona coordenadas de cada uno, permitiendo su ubicación en el mapa; este componente "listado de vendedores" permanece fijo a la derecha. 
+Cada vendedor tiene asociado un icono que permite visualizarlos en el mapa, con información resumida (nombre, cargo y foto) en forma de tarjeta.
+Adicionalmente, la aplicación contiene una actualización programada cada 30 s, obteniendo modificaciones en el mapa y en el listado de las coordenadas y estado de cada vendedor.
+Más vendedores pueden ser creados a través de un botón que despliega un formulario; este cuenta con validaciones de campos obligatorios, con el fin de contar con toda la información de cada vendedor. Una vez creados, la aplicación verifica que fue creado con éxito, permitiendo su visualización.
 
-## Code scaffolding
+## Ejecutar el proyecto localmente
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ejecuta `ng serve` para iniciar el servidor de desarrollo.
+Abre tu navegador web en la ruta `http://localhost:4200/`.
