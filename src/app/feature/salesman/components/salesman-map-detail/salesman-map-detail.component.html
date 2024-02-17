@@ -1,11 +1,13 @@
 <div class="card-details" *ngIf="!isLoader; else elseTemplate">
     <div class="image-container">
-        <img [src]="'../../../../../assets/img/' + salesman?.photo + '.jpg'">
+        <ng-container *ngIf="validateImage(salesman.photo); else defaultImage">
+            <img [src]="'../../../../../assets/img/' + salesman.photo + '.jpg'">
+        </ng-container>
     </div>
     <div class="info">
         <div class="text">
-            <h3>{{salesman?.name | uppercase}}</h3>
-            <p>{{salesman?.category}}</p>
+            <h3>{{salesman.name | uppercase}}</h3>
+            <p>{{salesman.category}}</p>
         </div>
         <div class="actions">
             <button >VER</button>
@@ -13,6 +15,9 @@
     </div>
 </div>
 
+<ng-template #defaultImage>
+    <img src="../../../../../assets/img/default.png">
+</ng-template>
 <ng-template #elseTemplate>
     <mat-spinner class="spinner"></mat-spinner>
 </ng-template>

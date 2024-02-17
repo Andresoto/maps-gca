@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Salesman } from '@core/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
+import { ALL_ICONS, ALL_IMAGES } from '../constants/imgIcons.constant';
 
 @Component({
   selector: 'app-salesman-map-detail',
@@ -11,7 +12,7 @@ export class SalesmanMapDetailComponent implements OnChanges{
 
   @Input() salesmanId!: string;
 
-  salesman?: Salesman;
+  salesman!: Salesman;
   isLoader: boolean = false;
 
   constructor(
@@ -41,5 +42,13 @@ export class SalesmanMapDetailComponent implements OnChanges{
         this.isLoader = false;
       }
     });
+  }
+
+  validateImage(image: string) {
+    return ALL_IMAGES.includes(image);
+  }
+
+  validateIcon(icon: string) {
+    return ALL_ICONS.includes(icon);
   }
 }

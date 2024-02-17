@@ -3,7 +3,7 @@
     #marker="mapMarker"
     *ngFor="let salesman of salesmanList"
     [position]="{lat: salesman.coordinates.latitude, lng: salesman.coordinates.longitude}"
-    [icon]="'../../../../../assets/icons/' + salesman.vehicle + '.svg'"
+    [icon]="validateIcon(salesman.vehicle)"
     [options]="markerOptions"
     (mapClick)="openInfoWindow(marker, salesman.id)"
   >

@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Salesman } from '@core/models/salesman.model';
+import { ALL_ICONS } from '@feature/salesman/components/constants/imgIcons.constant';
 import { SalesmanService } from '@shared/services/salesman.service';
 import { Subscription } from 'rxjs';
 
@@ -62,6 +63,14 @@ export class HomeComponent {
   openInfoWindow(marker: MapMarker, id: string) {
     this.infoWindow.open(marker);
     this.salesmanId = id;
+  }
+
+  validateIcon(icon: string) {
+    if (ALL_ICONS.includes(icon)) {
+      return `../../../../../assets/icons/${icon}.svg`
+    } else {
+      return `../../../../../assets/icons/sinvehiculo.svg`
+    }
   }
 
 }
