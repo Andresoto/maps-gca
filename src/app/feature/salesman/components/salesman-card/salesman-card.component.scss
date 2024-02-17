@@ -17,8 +17,15 @@
     font-size: 14px;
   }
   .info-left {
+    width: 50%;
     h3 {
       font-weight: 400;
+    }
+    h3,
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .space {
       margin-bottom: 10px;

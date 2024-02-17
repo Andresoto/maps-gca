@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NewSalesman } from '@core/models/salesman.model';
-import { Vehicles } from '@core/models/vehicules.model';
+import { MatDialogRef } from '@angular/material/dialog';
+import { NewSalesman } from '@shared/models/salesman.model';
+import { Vehicles } from '@shared/models/vehicules.model';
 import { SalesmanService } from '@shared/services/salesman.service';
 
 @Component({
@@ -27,7 +28,8 @@ export class FormSalesmandComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private salesmanService: SalesmanService
+    private salesmanService: SalesmanService,
+    private dialogRef: MatDialogRef<FormSalesmandComponent>
   ) {
     this.buildForm();
   }
@@ -59,6 +61,7 @@ export class FormSalesmandComponent {
     .subscribe({
       next: (response) => {
         console.log("Creado", response);
+        this.dialogRef.close();
       },
       error: (err) => {
         console.log(err);

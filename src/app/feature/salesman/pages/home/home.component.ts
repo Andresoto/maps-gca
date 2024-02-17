@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
-import { Salesman } from '@core/models/salesman.model';
-import { ALL_ICONS } from '@feature/salesman/components/constants/imgIcons.constant';
+import { ALL_ICONS } from '@feature/salesman/constants/img-icons.constant';
+import { Salesman } from '@shared/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
 import { Subscription } from 'rxjs';
 
@@ -25,15 +25,8 @@ export class HomeComponent {
 
   ngOnInit() {
     this.subscribeSalesman();
-    this.salesmanService.mapCenter$
-    .subscribe({
-      next: (data) => {
-        this.center = data;
-      }
-    })
-    this.timerInterval = setInterval(() => {
-      this.getSalesman();
-    }, 30000);
+    this.subscribeMapCenter();
+    this.updateCoordinates();
   }
 
   ngOnDestroy() {
@@ -46,6 +39,21 @@ export class HomeComponent {
         this.salesmanList = data;
       }
     });
+  }
+
+  subscribeMapCenter() {
+    this.salesmanService.mapCenter$
+    .subscribe({
+      next: (data) => {
+        this.center = data;
+      }
+    })
+  }
+
+  updateCoordinates() {
+    this.timerInterval = setInterval(() => {
+      this.getSalesman();
+    }, 30000);
   }
 
   getSalesman() {

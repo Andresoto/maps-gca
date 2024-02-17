@@ -8,11 +8,11 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { ListSalesmanComponent } from './components/list-salesman/list-salesman.component';
 import { SalesmanCardComponent } from './components/salesman-card/salesman-card.component';
 import { FormSalesmandComponent } from './components/form-salesmand/form-salesmand.component';
-import { HeaderComponent } from '@shared/components/header/header.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { MATERIAL_MODULES } from './material';
+import { MATERIAL_MODULES } from './constants/material-modules-import';
 import { SalesmanMapDetailComponent } from './components/salesman-map-detail/salesman-map-detail.component';
+import { Page1Component } from './pages/page1/page1.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +21,13 @@ import { SalesmanMapDetailComponent } from './components/salesman-map-detail/sal
     ListSalesmanComponent,
     SalesmanCardComponent,
     FormSalesmandComponent,
-    SalesmanMapDetailComponent
+    SalesmanMapDetailComponent,
+    Page1Component
   ],
   imports: [
     CommonModule,
     SalesmanRoutingModule,
     GoogleMapsModule,
-    HeaderComponent,
     ReactiveFormsModule,
     MATERIAL_MODULES
   ]

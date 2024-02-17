@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Salesman } from '@core/models/salesman.model';
-import { ALL_ICONS, ALL_IMAGES } from '../constants/imgIcons.constant';
+import { Salesman } from '@shared/models/salesman.model';
+import { ALL_ICONS, ALL_IMAGES } from '../../constants/img-icons.constant';
 
 @Component({
   selector: 'app-salesman-card',

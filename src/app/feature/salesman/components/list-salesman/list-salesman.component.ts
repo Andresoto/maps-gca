@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Salesman } from '@core/models/salesman.model';
+import { Salesman } from '@shared/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
 import { FormSalesmandComponent } from '../form-salesmand/form-salesmand.component';
 
@@ -59,12 +59,19 @@ export class ListSalesmanComponent {
   }
 
   createSalesman() {
-    this.dialog.open(FormSalesmandComponent, {
+    const dialogRef = this.dialog.open(FormSalesmandComponent, {
       minHeight: '50vh',
       width: '100%',
       position: {
         bottom: '20px',
       },
+    });
+
+    dialogRef.afterClosed()
+    .subscribe({
+      next: () => {
+        console.log('Cerrado');
+      }
     });
   }
 }

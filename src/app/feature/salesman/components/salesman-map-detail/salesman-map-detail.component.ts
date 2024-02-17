@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Salesman } from '@core/models/salesman.model';
+import { Salesman } from '@shared/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
-import { ALL_ICONS, ALL_IMAGES } from '../constants/imgIcons.constant';
+import { ALL_ICONS, ALL_IMAGES } from '../../constants/img-icons.constant';
 
 @Component({
   selector: 'app-salesman-map-detail',

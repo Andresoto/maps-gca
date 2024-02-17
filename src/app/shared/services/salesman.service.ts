@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NewSalesman, Salesman } from '@core/models/salesman.model';
+import { NewSalesman, Salesman } from '@shared/models/salesman.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -10,8 +10,8 @@ export class SalesmanService {
 
   private baseURL = 'http://74.235.109.154/api'
 
-  public salesman$ = new BehaviorSubject<Salesman[]>([])
-  public mapCenter$ = new BehaviorSubject<google.maps.LatLngLiteral>({ lat: 0, lng: 0 })
+  public salesman$ = new BehaviorSubject<Salesman[]>([]);
+  public mapCenter$ = new BehaviorSubject<google.maps.LatLngLiteral>({ lat: 0, lng: 0 });
 
   constructor(
     private http: HttpClient
