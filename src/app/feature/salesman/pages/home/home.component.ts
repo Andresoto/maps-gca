@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Salesman } from '@core/models/salesman.model';
 import { SalesmanService } from '@shared/services/salesman.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent {
   center: google.maps.LatLngLiteral = { lat: 4.7116127, lng: 4.6811127 };
   zoom = 14;
   markerOptions: google.maps.MarkerOptions = { draggable: false };
+  public timerInterval: any;
 
   salesmanList: Salesman[] = [];
   salesmanId = ''
@@ -28,6 +30,13 @@ export class HomeComponent {
         this.center = data;
       }
     })
+    this.timerInterval = setInterval(() => {
+      this.getSalesman();
+    }, 30000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timerInterval);
   }
 
   subscribeSalesman() {
