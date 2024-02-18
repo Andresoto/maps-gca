@@ -1,8 +1,43 @@
 .container {
-    background-color: #fff;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .semicircle,
+  .semicircle div {
+    width: 500px;
+    height: 500px;
+    animation: 6s rotate141 infinite linear;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .semicircle div {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+  }
+
+  .semicircle:before,
+  .semicircle div:before {
+    content: "";
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 50%;
+    display: block;
+    background: radial-gradient(transparent, transparent 65%, #2d344d 65%, #000);
+    background-size: 100% 200%;
+  }
+
+  @keyframes rotate141 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
