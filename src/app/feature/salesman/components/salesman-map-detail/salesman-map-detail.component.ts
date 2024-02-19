@@ -10,26 +10,53 @@ import { ALL_ICONS, ALL_IMAGES } from '../../constants/img-icons.constant';
 })
 export class SalesmanMapDetailComponent implements OnChanges{
 
+  /**
+   * [salesmanId]
+   * @description defines the variable that stores the id of a salesman
+   * @type {Salesman}
+   */
   @Input() salesmanId!: string;
 
-  salesman!: Salesman;
-  isLoader: boolean = false;
+  /**
+   * [salesman]
+   * @description define variable that saves the of salesman
+   * @type {Salesman}
+   */
+  public salesman!: Salesman;
+
+  /**
+   * [isLoader]
+   * @description variable that defines whether the loader is shown or not
+   * @type {boolean}
+   */
+  public isLoader: boolean = false;
 
   constructor(
     private salesmanService: SalesmanService
   ) {}
 
-  ngOnInit() {
-    this.getSalesman();
+  ngOnInit(): void {
+    this._getSalesman();
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  /**
+   * [ngOnChanges]
+   * @description Validates if the salesman id has changed, if this is the case, obtain the data of this seller
+   * @return { void }
+   */
+  ngOnChanges(changes: SimpleChanges): void {
     if(changes['salesmanId'] && !changes['salesmanId'].firstChange ) {
-      this.getSalesman();
+      this._getSalesman();
     }
   }
 
-  getSalesman() {
+  /**
+   * [_getSalesman]
+   * @description get a specific salesman
+   * @private
+   * @return { void }
+   */
+  private _getSalesman(): void {
     this.isLoader = true;
     this.salesmanService.getOne(this.salesmanId)
     .subscribe({
@@ -44,11 +71,23 @@ export class SalesmanMapDetailComponent implements OnChanges{
     });
   }
 
-  validateImage(image: string) {
+  /**
+   * [validateImage]
+   * @description validates if the image string is found in the project assets
+   * @params {string} image
+   * @return {boolean}
+   */
+  public validateImage(image: string): boolean {
     return ALL_IMAGES.includes(image);
   }
 
-  validateIcon(icon: string) {
+  /**
+   * [validateIcon]
+   * @description validates if the icon string is found in the project assets
+   * @params {string} icon
+   * @return {boolean}
+   */
+  public validateIcon(icon: string): boolean {
     return ALL_ICONS.includes(icon);
   }
 }

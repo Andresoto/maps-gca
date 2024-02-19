@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NewSalesman, Salesman } from '@shared/models/salesman.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,15 +17,15 @@ export class SalesmanService {
     private http: HttpClient
   ) { }
 
-  getAllSalesman() {
+  public getAllSalesman(): Observable<Salesman[]> {
     return this.http.get<Salesman[]>(`${this.baseURL}/salesman`);
   }
 
-  createSalesman(data: NewSalesman) {
+  public createSalesman(data: NewSalesman) {
     return this.http.post(`${this.baseURL}/salesman`, data);
   }
 
-  getOne(id: string) {
+  public getOne(id: string): Observable<Salesman> {
     return this.http.get<Salesman>(`${this.baseURL}/salesman/${id}`);
   }
 }
